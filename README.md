@@ -10,8 +10,8 @@ Jest
 IsbnValidator
 
 ## Test Locally
-`npm install`
-`npm start`
+- `npm install`
+- `npm start`
 
 ## Send a request with Rest Client in VSCode
 ```
