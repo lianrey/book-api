@@ -8,9 +8,9 @@ export default function makeBooksDb ({ makeDb }) {
     update,
     remove
   })
-  async function findAll ({ publishedOnly = true } = {}) {
+  async function findAll () {
     const db = await makeDb()
-    const query = publishedOnly ? { published: true } : {}
+    const query = {}
     const result = await db.collection(process.env.DM_BookS_DB_NAME).find(query)
     return (await result.toArray()).map(({ _id: id, ...found }) => ({
       id,
