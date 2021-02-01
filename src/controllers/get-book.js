@@ -1,13 +1,15 @@
 export default function makeGetBook ({ retrieveBook }) {
   return async function getBook (httpRequest) {
     try {
-      const book = await retrieveBook(httpRequest.params.id)
+      const response = await retrieveBook(httpRequest.params.id)
+      const book = response.book
+
       return {
         headers: {
           'Content-Type': 'application/json',
           'Last-Modified': new Date(book.modifiedOn).toUTCString()
         },
-        statusCode: 200,
+        statusCode: response.count === 0 ? 404 : 200,
         body: { book }
       }
     } catch (e) {

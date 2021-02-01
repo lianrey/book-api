@@ -2,7 +2,7 @@ GET http://localhost:3000/books
 
 ###
 
-GET http://localhost:3000/books/ckklthyvo0000v3s33wgpg7y1
+GET http://localhost:3000/books/ckklto2k600003ds3ddvu0klx
 
 ###
 
@@ -10,10 +10,28 @@ POST http://localhost:3000/books
 Content-Type: application/json
 
 {
-  "name": "Cracking the coding interview 1",
+  "name": "Cracking the coding interview 3",
   "author": "Unknow",
   "isbn": "0984782869",
   "numberOfPages": 1000,
   "bookEdition": "first",
   "bookFormat": "hardcopy"
 }
+
+###
+
+PUT http://localhost:3000/books/ckklto2k600003ds3ddvu0klx
+Content-Type: application/json
+
+{
+  "name": "Cracking the coding interview 2...",
+  "author": "Unknow",
+  "isbn": "0984782869",
+  "numberOfPages": 1000,
+  "bookEdition": "first",
+  "bookFormat": "hardcopy"
+}
+
+###
+
+DELETE http://localhost:3000/books/ckklvc9r90000pps3b8bt2sgv
