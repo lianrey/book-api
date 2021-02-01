@@ -7,6 +7,16 @@ export default function makeAddBook ({ booksDb }) {
       return exists
     }
 
-    return booksDb.insert(bookInfo)
+    return booksDb.insert({
+      id: book.getId(),
+      name: book.getName(),
+      createdOn: book.getCreatedOn(),
+      author: book.getAuthor(),
+      isbn: book.getIsbn(),
+      modifiedOn: book.getModifiedOn(),
+      numberOfPages: book.getNumberOfpages(),
+      bookEdition: book.getBookEdition(),
+      bookFormat: book.getBookFormat()
+    })
   }
 }
